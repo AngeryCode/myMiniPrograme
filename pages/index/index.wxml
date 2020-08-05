@@ -1,5 +1,30 @@
 <!--index.wxml-->
-<view>
-  首页
-  <text class="iconfont iconjihua"></text>
+<view class="index">
+  <search-input></search-input>
+  <swiper class="index-swiper"  indicator-dots="true"  autoplay="true"  interval="5000" duration="1000">
+    <swiper-item  :item-id="item.goods_id" wx:for="{{swiperArr}}" wx:key="goods_id" >
+      <image  src="{{item.image_src}}" mode="widthFix" lazy-load="false">
+        
+      </image>
+    </swiper-item>
+  </swiper>
+  <view class="navigate">
+    <navigator wx:for="{{navigateArr}}" wx:key="name"  url="../../pages/search/search" hover-class="navigator-hover" open-type="navigate">
+      <image  src="{{item.image_src}}" mode="widthFix" >
+      
+    </image>
+    </navigator>
+  </view>
+  <view class="floor" wx:for="{{floorArr}}" wx:for-index="index1" wx:for-item="item1" wx:key="floor_title">
+    <view class="floor-title">
+      <image  src="{{item1.floor_title.image_src}}" mode="widthFix">
+        
+      </image>
+    </view>
+    <view class="product-list" wx:for="{{item1.product_list}}" wx:key="name" wx:for-index="index2">
+      <image  src="{{item.image_src}}" mode="{{index2 === 0 ? 'widthFix' : 'scaleToFill'}}">
+        
+      </image>
+    </view>
+  </view>
 </view>
