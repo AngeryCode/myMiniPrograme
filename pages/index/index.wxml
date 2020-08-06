@@ -21,10 +21,10 @@
         
       </image>
     </view>
-    <view class="product-list" wx:for="{{item1.product_list}}" wx:key="name" wx:for-index="index2">
+    <navigator class="product-list" url="../../pages/goods_detail/goods_detail" hover-class="navigator-hover" open-type="navigate" wx:for="{{item1.product_list}}" wx:key="name" wx:for-index="index2">
       <image  src="{{item.image_src}}" mode="{{index2 === 0 ? 'widthFix' : 'scaleToFill'}}">
         
       </image>
-    </view>
+    </navigator>
   </view>
 </view>
