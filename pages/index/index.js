@@ -18,7 +18,7 @@ Page({
   },
   async loadSwiperData() {
     const res = await myRequest({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata'
+      url: '/home/swiperdata'
     })
     this.setData({
       swiperArr: res.data.message
@@ -27,7 +27,7 @@ Page({
   },
   async loadNavigateData() {
     const res = await myRequest({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems'
+      url: '/home/catitems'
     })
     this.setData({
       navigateArr: res.data.message
@@ -36,7 +36,7 @@ Page({
   },
   async loadFloorData () {
     const res = await myRequest({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'
+      url: '/home/floordata'
     })
     this.setData({
       floorArr: res.data.message

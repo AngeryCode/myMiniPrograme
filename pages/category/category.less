@@ -1,0 +1,44 @@
+.categary-container {
+    height: 100vh;
+    .scroll-view-container {
+        height: ~'calc(100vh - 90rpx)';
+        display: flex;
+        .left-scroll {
+            flex: 2;
+            view {
+                display: flex;
+                justify-content: center;
+                height: 80rpx;
+                align-items: center;
+                font-size: 30rpx;
+            }
+            .active {
+                color: var(--themeColor);
+                border-left: 5rpx solid currentColor;
+            }
+        }
+        .right-scroll {
+            flex: 5;
+            .cat-group {
+                .cat-name{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 80rpx;
+                    .line {
+                        color: #ccc;
+                        padding: 0 10rpx;
+                    }
+                }
+                .cat-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    navigator{
+                        width: 33.33%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

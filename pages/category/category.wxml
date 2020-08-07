@@ -1,2 +1,54 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="categary-container">
+    <searchInput></searchInput>
+    <view class="scroll-view-container">
+        <scroll-view class="left-scroll" scroll-y="{{true}}">
+            <view 
+            class="{{currentIndex === index ? 'active' : ''}}" 
+            hover-class="none" 
+            hover-stop-propagation="false" 
+            wx:for="{{leftViewData}}" 
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="index"
+            bindtap="clickItem"
+            data-index="{{index}}"
+            >
+                {{item}}
+            </view>
+        </scroll-view>
+        <scroll-view class="right-scroll" scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+             <view
+                wx:for="{{rightViewData[currentIndex]}}"
+                wx:for-index="index1"
+                wx:for-item="item1"
+                wx:key="index1"
+                class="cat-group"
+             >
+                <view class="cat-name">
+                    <text class="line">/</text>
+                     {{item1.cat_name}}
+                    <text class="line">/</text>
+                </view>
+                 <view
+                    class="cat-list"
+                 >
+                     <navigator
+                        wx:for="{{item1.children}}"
+                        wx:key="cat_id"
+                        wx:for-index="index2"
+                        wx:for-item="item2"
+                        url="../../pages/goods_detail/goods_detail"
+                     >
+                         <image  src="{{item2.cat_icon}}" mode="widthFix">
+                             
+                         </image>
+                         <text class="">
+                             {{item2.cat_name}}
+                         </text>
+                     </navigator>
+                 </view>
+                     
+             </view>
+        </scroll-view>
+    </view>
+</view>
