@@ -1,2 +1,22 @@
-<!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<searchInput></searchInput>
+<tabList tabs="{{tabs}}" bindhandleTap="handleTap">
+    <view class="goods-list" >
+        <view class="goods-item" 
+        wx:for="{{goodsList}}"
+        wx:key="cat_id"
+        >
+            <image class="goods-image" src="{{item.goods_small_logo}}" mode="widthFix" >
+            
+            </image>
+            <view class="goods-text" >
+                <view class="goods-description">
+                    {{item.goods_name}}
+                </view>
+                <view class="goods-price" >
+                    ￥ {{item.goods_price}}
+                </view>
+            </view>
+        </view>
+    </view>
+</tabList>
+

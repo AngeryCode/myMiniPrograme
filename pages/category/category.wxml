@@ -37,7 +37,7 @@
                         wx:key="cat_id"
                         wx:for-index="index2"
                         wx:for-item="item2"
-                        url="../../pages/goods_detail/goods_detail"
+                        url="../../pages/goods_list/goods_list?catid={{item2.cat_id}}"
                      >
                          <image  src="{{item2.cat_icon}}" mode="widthFix">
                              
