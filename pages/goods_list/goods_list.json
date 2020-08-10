@@ -4,5 +4,7 @@
     "tabList": "../../components/tabList/tabList"
   },
   "navigationBarTitleText": "商品列表",
-  "navigationBarTextStyle": "black"
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }
