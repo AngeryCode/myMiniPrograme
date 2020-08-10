@@ -41,6 +41,17 @@ Page({
     })
     this.loadListData()
   },
+  onPullDownRefresh: function () {
+    this.setData({
+      goodsList: [],
+      total: 0,
+      param: {
+        ...this.data.param,
+        pagenum: 1
+      }
+    })
+    this.loadListData()
+  },
   onReachBottom() {
     const {total,param} = this.data
     const totalPage = Math.ceil(total / param.pagesize)
@@ -54,9 +65,14 @@ Page({
       this.loadListData()
 
     }else {
-      console.log('没有下一页')
+      wx.showToast({
+        title: '没有下一页了',
+        icon: 'none',
+        duration: 2000
+      })
     }
   },
+  
   
   handleTap(e) {
     const { index } = e.detail
@@ -79,7 +95,7 @@ Page({
     let {param, goodsList} = this.data
     const url = `/goods/search?cid=${param.cid}&query=${param.query}&pagenum=${param.pagenum}&pagesize=${param.pagesize}`
     const res = await myRequest({ url })
-    console.log(res)
+    wx.stopPullDownRefresh();
     const {goods} = res.data.message
     const {total} = res.data.message
     goodsList = [...goodsList, goods].flat()
