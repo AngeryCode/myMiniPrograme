@@ -1,0 +1,92 @@
+.page-goods-detail {
+    padding-bottom: 90r;
+  .goods-detail-swiper {
+    height: 70vw;
+    text-align: center;
+    image {
+      width: 80%;
+    }
+  }
+  .goods-detail-center {
+    .goods-detail-price {
+      color: var(--themeColor);
+      font-size: 40rpx;
+      font-weight: 600;
+      padding: 15rpx;
+    }
+    .goods-detail-message {
+      display: flex;
+      padding: 0 15rpx;
+      color: #b1b1b1;
+      border-bottom: 10rpx solid #ccc;
+      .message-left {
+        flex: 5;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .message-right {
+        float: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 10rpx;
+        border-left: 1px solid #ccc;
+      }
+    }
+  }
+  .detail-tool-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 90rpx;
+    bottom: 0;
+    display: flex;
+    background-color: #fff;
+    .tool-bar-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      view,navigator {
+          text-align: center;
+          flex: 1;
+          font-size: 24rpx;
+          position: relative;
+          button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0;
+          }
+      }
+    }
+    .tool-bar-right {
+      display: flex;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      view {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          color: #fff;
+          font-size: 24rpx;
+          font-weight: 400;
+          &:first-child {
+            background-color: #ffa500;
+          }
+          &:last-child {
+            background-color: #eb4450;
+          }
+      }
+    }
+  }
+}

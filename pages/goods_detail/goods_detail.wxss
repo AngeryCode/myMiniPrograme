@@ -1,1 +1,91 @@
-/* pages/goods_detail/goods_detail.wxss */
+.page-goods-detail {
+  padding-bottom: 90r;
+}
+.page-goods-detail .goods-detail-swiper {
+  height: 70vw;
+  text-align: center;
+}
+.page-goods-detail .goods-detail-swiper image {
+  width: 80%;
+}
+.page-goods-detail .goods-detail-center .goods-detail-price {
+  color: var(--themeColor);
+  font-size: 40rpx;
+  font-weight: 600;
+  padding: 15rpx;
+}
+.page-goods-detail .goods-detail-center .goods-detail-message {
+  display: flex;
+  padding: 0 15rpx;
+  color: #b1b1b1;
+  border-bottom: 10rpx solid #ccc;
+}
+.page-goods-detail .goods-detail-center .goods-detail-message .message-left {
+  flex: 5;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.page-goods-detail .goods-detail-center .goods-detail-message .message-right {
+  float: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 10rpx;
+  border-left: 1px solid #ccc;
+}
+.page-goods-detail .detail-tool-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  bottom: 0;
+  display: flex;
+  background-color: #fff;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-left view,
+.page-goods-detail .detail-tool-bar .tool-bar-left navigator {
+  text-align: center;
+  flex: 1;
+  font-size: 24rpx;
+  position: relative;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-left view button,
+.page-goods-detail .detail-tool-bar .tool-bar-left navigator button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-right view {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 400;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-right view:first-child {
+  background-color: #ffa500;
+}
+.page-goods-detail .detail-tool-bar .tool-bar-right view:last-child {
+  background-color: #eb4450;
+}

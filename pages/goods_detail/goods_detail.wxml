@@ -1,2 +1,59 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<view class="page-goods-detail">
+    <swiper class="goods-detail-swiper" indicator-dots autoplay interval="5000" duration="1000" circular>
+        <swiper-item wx:for="{{goods_detail.pics}}" wx:key="pics_id">
+            <image mode="widthFix" src="{{item.pics_mid}}"></image>
+        </swiper-item>
+    </swiper>
+
+    <view class="goods-detail-center">
+        <view class="goods-detail-price" >
+            ￥ 6809
+        </view>
+        <view class="goods-detail-message">
+            <view class="message-left">海信（Hisense）LED50MU8600UC 50英寸4K超高清智能电视HDR超薄曲面</view>
+            <view class="message-right">
+                <text class="iconfont iconshoucang">
+                    
+                </text>
+                <text>收藏</text>
+            </view>
+        </view>
+    </view>
+
+    <rich-text nodes="{{goods_text}}"></rich-text>
+
+    <view class="detail-tool-bar">
+        <view class="tool-bar-left">
+            <view >
+                <text class="iconfont iconkefu">
+                    
+                </text>
+                <text class="">
+                    联系客服
+                </text>
+                <button open-type="contact"></button>
+            </view>
+            <view >
+                <text class="iconfont iconfenxiang">
+                    
+                </text>
+                <text class="">
+                    分享
+                </text>
+                <button open-type="share"></button>
+            </view>
+            <navigator url="../../pages/cart/cart" open-type="switchTab">
+                <text class="iconfont icongouwuchezhengpin">
+                    
+                </text>
+                <text class="">
+                    购物车
+                </text>
+            </navigator>
+        </view>
+        <view class="tool-bar-right">
+            <view bind:tap="addTocart" data-item="{{goods_detail}}">加入购物车</view>
+            <view>立即购买</view>
+        </view>
+    </view>
+</view>
