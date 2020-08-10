@@ -1,66 +1,33 @@
-// pages/goods_detail/goods_detail.js
+import { myRequest } from '../../request/myRequest'
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    goods_id: '',
+    goods_detail: {},
+    goods_text: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    this.setData({
+      goods_id: options.goods_id
+    })
+    this.loadGoodsDetail()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  async loadGoodsDetail () {
+    const res = await myRequest({url: `/goods/detail?goods_id=${this.data.goods_id}`})
+    this.setData({
+      goods_detail: res.data.message,
+      goods_text: res.data.message.goods_introduce.replace(/.webp/g,'.jpg')
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  addTocart (e) {
+    const cartItems = wx.getStorageSync('cart') || [];
+    const currentItem = e.target.dataset.item
+    const idx = cartItems.findIndex(item => item.goods_id === currentItem.goods_id)
+    if (idx === -1){
+      currentItem.number = 1
+      cartItems.push(currentItem)
+    }else{
+      cartItems[idx].number ++;
+    }
+    wx.setStorageSync('cart', cartItems);
   }
 })

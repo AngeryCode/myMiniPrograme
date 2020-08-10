@@ -1,9 +1,10 @@
 <searchInput></searchInput>
 <tabList tabs="{{tabs}}" bindhandleTap="handleTap">
     <view class="goods-list" >
-        <view class="goods-item" 
+        <navigator class="goods-item" 
         wx:for="{{goodsList}}"
         wx:key="cat_id"
+        url="../../pages/goods_detail/goods_detail?goods_id={{item.goods_id}}"
         >
             <image class="goods-image" src="{{item.goods_small_logo}}" mode="widthFix" >
             
@@ -16,7 +17,7 @@
                     ￥ {{item.goods_price}}
                 </view>
             </view>
-        </view>
+        </navigator>
     </view>
 </tabList>
 
