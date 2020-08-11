@@ -1,4 +1,5 @@
 import { myRequest } from '../../request/myRequest'
+import { wxToast } from '../../utils/userSetting'
 Page({
   data: {
     goods_id: '',
@@ -21,6 +22,7 @@ Page({
   addTocart (e) {
     const cartItems = wx.getStorageSync('cart') || [];
     const currentItem = e.target.dataset.item
+    currentItem.isActive = true
     const idx = cartItems.findIndex(item => item.goods_id === currentItem.goods_id)
     if (idx === -1){
       currentItem.number = 1
@@ -28,6 +30,7 @@ Page({
     }else{
       cartItems[idx].number ++;
     }
+    wxToast('添加成功', 'success')
     wx.setStorageSync('cart', cartItems);
   }
 })

@@ -26,6 +26,7 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  padding-right: 10rpx;
 }
 .page-goods-detail .goods-detail-center .goods-detail-message .message-right {
   float: 2;
