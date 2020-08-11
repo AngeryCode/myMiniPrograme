@@ -9,7 +9,7 @@
     </swiper-item>
   </swiper>
   <view class="navigate">
-    <navigator wx:for="{{navigateArr}}" wx:key="name"  url="../../pages/search/search" hover-class="navigator-hover" open-type="navigate">
+    <navigator wx:for="{{navigateArr}}" wx:key="name"  url="../../pages/category/category" hover-class="navigator-hover" open-type="switchTab">
       <image  src="{{item.image_src}}" mode="widthFix" >
       
     </image>
