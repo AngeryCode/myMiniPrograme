@@ -1,66 +1,50 @@
-// pages/pay/pay.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    cart: [],
+    userAddress: '',
+    userAddressInfo: {},
+    totalNum: 0,
+    totalPrice: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    this.getPayInfo()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    this.getPayInfo()
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  getPayInfo() {
+    let cart = wx.getStorageSync('cart');
+    const userAddress = wx.getStorageSync('userAddress');
+    const userAddressInfo = wx.getStorageSync('userAddressInfo');
+    let totalNum = 0
+    let totalPrice = 0
+    cart = cart.filter(item => item.isActive)
+    cart.forEach(item => {
+      totalNum += item.number
+      totalPrice += item.number * item.goods_price
+    })
+    this.setData({
+      cart,
+      userAddress,
+      userAddressInfo,
+      totalNum,
+      totalPrice
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handlePay () {
+    wx.showToast({
+      title: '支付成功',
+      icon: 'success',
+      duration: 1500,
+      mask: true,
+      success: (result)=>{
+        console.log(result);
+      },
+      fail: (e)=>{console.log(e);}
+    });
+    wx.removeStorageSync('cart');
+    wx.navigateBack({
+      delta: 1
+    });
   }
 })

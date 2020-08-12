@@ -1,1 +1,3 @@
-/* pages/login/login.wxss */
+.login-auth{
+    margin-top: 50rpx;
+}

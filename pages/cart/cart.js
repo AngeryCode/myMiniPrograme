@@ -1,4 +1,10 @@
-import { wxToast, getUserSetting, openSetting, chooseAddress, wxModal } from '../../utils/userSetting'
+import {
+  wxToast,
+  getUserSetting,
+  openSetting,
+  chooseAddress,
+  wxModal
+} from '../../utils/userSetting'
 Page({
   data: {
     userAddressInfo: {},
@@ -48,13 +54,10 @@ Page({
   },
   // 获取购物车信息
   getLocalCartInfo() {
-    const cart = wx.getStorageSync('cart')
-    console.log(cart)
-    if (cart) {
-      this.setData({
-        cart
-      })
-    }
+    const cart = wx.getStorageSync('cart') || []
+    this.setData({
+      cart
+    })
   },
   // 获取总价，是否全选，购买数量
   getTotalPrice() {
@@ -86,8 +89,8 @@ Page({
     this.setData({
       cart
     })
-    wx.setStorageSync('cart', cart);
-    this.getTotalPrice() 
+    wx.setStorageSync('cart', cart)
+    this.getTotalPrice()
   },
   //全选反选
   handleSelectAll() {
@@ -102,7 +105,7 @@ Page({
     this.setData({
       cart
     })
-    wx.setStorageSync('cart', cart);
+    wx.setStorageSync('cart', cart)
     this.getTotalPrice()
   },
   //+ -
@@ -130,20 +133,22 @@ Page({
     this.setData({
       cart
     })
-    wx.setStorageSync('cart', cart);
+    wx.setStorageSync('cart', cart)
     this.getTotalPrice()
   },
   //结算按钮
-  handleCal () {
-    const {totalNumber, userAddressInfo} = this.data
+  handleCal() {
+    const { totalNumber, userAddressInfo, userAddress } = this.data
     if (totalNumber) {
-      if (Object.keys(userAddressInfo).length <= 0 ){
-        wxToast('请填写收货地址','none')
-      }else{
-        wx.navigateTo({url: '../../pages/pay/pay'});
+      if (Object.keys(userAddressInfo).length <= 0) {
+        wxToast('请填写收货地址', 'none')
+      } else {
+        wx.setStorageSync('userAddress', userAddress)
+        wx.setStorageSync('userAddressInfo', userAddressInfo)
+        wx.navigateTo({ url: '../../pages/pay/pay' })
       }
-    }else{
-      wxToast('购物车没有货','none')
+    } else {
+      wxToast('购物车没有货或未选中需要购买的商品', 'none')
     }
   }
 })

@@ -1,2 +1,54 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<view class="page-pay-container" hover-class="none" hover-stop-propagation="false">
+    <view class="pay-top" hover-class="none" hover-stop-propagation="false">
+        <view class="top-top" hover-class="none" hover-stop-propagation="false">
+            <view class="" hover-class="none" hover-stop-propagation="false">
+                收件人：{{userAddressInfo.userName}}
+            </view>
+            <view class="" hover-class="none" hover-stop-propagation="false">
+                {{userAddressInfo.telNumber}}
+            </view>
+        </view>
+        <view class="top-bottom" hover-class="none" hover-stop-propagation="false">
+            {{userAddress}}
+        </view>
+    </view>
+    <view class="pay-center" hover-class="none" hover-stop-propagation="false">
+        购物车
+    </view>
+    <view class="pay-list" hover-class="none" hover-stop-propagation="false">
+        <view 
+        class="pay-list-item" 
+        hover-class="none" 
+        hover-stop-propagation="false"
+        wx:for="{{cart}}"
+        wx:key="goods_id"
+        >
+            <view class="pay-item-image" hover-class="none" hover-stop-propagation="false">
+                <image class="" src="{{item.goods_small_logo}}" mode="widthFix" >
+            
+                </image>
+            </view>
+            <view class="pay-item-info" hover-class="none" hover-stop-propagation="false">
+                <view class="pay-item-info-top" hover-class="none" hover-stop-propagation="false">
+                    {{item.goods_name}}
+                </view>
+                <view class="pay-item-info-bottom" hover-class="none" hover-stop-propagation="false">
+                    <view class="">￥ {{item.goods_price}}</view>
+                    <view class="">X {{item.number}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="pay-bottom" hover-class="none" hover-stop-propagation="false">
+        <view class="bottom-left" hover-class="none" hover-stop-propagation="false">
+            <view class="left-top">合计: <text>￥{{totalPrice}}</text></view>
+            <view class="left-bottom">包含运费</view>
+        </view>
+        <view 
+        class="bottom-right"
+        bind:tap="handlePay"
+        >
+            支付({{totalNum}})
+        </view>
+    </view>
+</view>

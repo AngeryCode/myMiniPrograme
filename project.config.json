@@ -92,6 +92,20 @@
 					"pathName": "pages/cart/cart",
 					"query": "goods_id=43986",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pay/pay",
+					"pathName": "pages/pay/pay",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
