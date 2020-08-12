@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "tabList": "../../components/tabList/tabList"
+  },
+  "navigationBarTitleText": "订单详情"
 }
