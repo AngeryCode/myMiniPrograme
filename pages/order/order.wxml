@@ -1,2 +1,30 @@
-<!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<tabList tabs="{{tabArr}}" bindhandleTap="handleTap">
+    <view class="order-list" hover-class="none" hover-stop-propagation="false">
+        <view  class="order-item" wx:for="{{showData}}" wx:for-index="index" wx:key="index">
+            <view class="one-line" hover-class="none" hover-stop-propagation="false">
+                <view class="left" hover-class="none" hover-stop-propagation="false">
+                    订单编号
+                </view>
+                <view class="right" hover-class="none" hover-stop-propagation="false">
+                    {{item.order_number}}
+                </view>
+            </view>
+            <view class="one-line" hover-class="none" hover-stop-propagation="false">
+                <view class="left" hover-class="none" hover-stop-propagation="false">
+                    订单价格
+                </view>
+                <view class="right themeColor" hover-class="none" hover-stop-propagation="false">
+                    ￥{{item.order_price}}
+                </view>
+            </view>
+            <view class="one-line" hover-class="none" hover-stop-propagation="false">
+                <view class="left" hover-class="none" hover-stop-propagation="false">
+                    订单日期
+                </view>
+                <view class="right" hover-class="none" hover-stop-propagation="false">
+                    {{item.order_date}}
+                </view>
+            </view>
+        </view>
+    </view>
+</tabList>

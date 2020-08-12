@@ -49,49 +49,49 @@
                     </view>
                 </view>
             </view>
-            <view class="order-wrap" hover-class="none" hover-stop-propagation="false">
+            <view class="order-wrap">
                 <view class="order-title">我的订单</view>
-                <view class="order-list" hover-class="none" hover-stop-propagation="false">
-                    <view class="order-item">
-                        <view class="iconfont iconjihua" hover-class="none" hover-stop-propagation="false"></view>
-                        <view class="order-name" hover-class="none" hover-stop-propagation="false">
+                <view class="order-list">
+                    <navigator url="../../pages/order/order?type=1" class="order-item">
+                        <view class="iconfont iconjihua"></view>
+                        <view  class="order-name" >
                             全部订单
                         </view>
-                    </view>
-                    <view class="order-item">
-                        <view class="iconfont iconfukuantongzhi" hover-class="none" hover-stop-propagation="false"></view>
-                        <view class="order-name" hover-class="none" hover-stop-propagation="false">
+                    </navigator>
+                    <navigator url="../../pages/order/order?type=2" class="order-item">
+                        <view class="iconfont iconfukuantongzhi"></view>
+                        <view class="order-name" >
                             代付款
                         </view>
-                    </view>
-                    <view class="order-item">
-                        <view class="iconfont iconreceipt-address" hover-class="none" hover-stop-propagation="false"></view>
-                        <view class="order-name" hover-class="none" hover-stop-propagation="false">
+                    </navigator>
+                    <navigator url="../../pages/order/order?type=3" class="order-item">
+                        <view class="iconfont iconreceipt-address"></view>
+                        <view class="order-name" >
                             待收货
                         </view>
-                    </view>
-                    <view class="order-item">
-                        <view class="iconfont iconfukuan" hover-class="none" hover-stop-propagation="false"></view>
-                        <view class="order-name" hover-class="none" hover-stop-propagation="false">
+                    </navigator>
+                    <navigator url="../../pages/order/order?type=4" class="order-item">
+                        <view class="iconfont iconfukuan"></view>
+                        <view class="order-name" >
                             退款/退货
                         </view>
-                    </view>
+                    </navigator>
                 </view>
             </view>
-            <view class="goods-address" hover-class="none" hover-stop-propagation="false">
+            <view class="goods-address" >
                 收货地址管理
             </view>
             <view class="user-page-others">
-                <view class="contract" hover-class="none" hover-stop-propagation="false">
-                    <view class="" hover-class="none" hover-stop-propagation="false">联系客服</view>
-                    <view class="" hover-class="none" hover-stop-propagation="false">
+                <view class="contract" >
+                    <view class="" >联系客服</view>
+                    <view class="" >
                         400-618-4000
                     </view>
                 </view>
-                <view class="feedback" hover-class="none" hover-stop-propagation="false">意见反馈</view>
-                <view class="aboutus" hover-class="none" hover-stop-propagation="false">关于我们</view>
+                <view class="feedback">意见反馈</view>
+                <view class="aboutus">关于我们</view>
             </view>
-            <view class="user-page-share" hover-class="none" hover-stop-propagation="false">
+            <view class="user-page-share" >
                 把应用推荐给其他人
             </view>
         </view>
