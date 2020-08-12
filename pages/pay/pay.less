@@ -1,0 +1,91 @@
+page {
+  font-size: 24rpx;
+  padding-bottom: 90rpx;
+}
+.page-pay-container {
+  .pay-top {
+    display: flex;
+    flex-direction: column;
+    padding: 10rpx;
+    .top-top {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .pay-center {
+    font-size: 50rpx;
+    padding: 10rpx;
+    font-weight: 600;
+    border-bottom: 1rpx solid var(--themeColor);
+  }
+  .pay-list {
+    .pay-list-item {
+      display: flex;
+      border-bottom: 1rpx solid #ccc;
+      .pay-item-image {
+        flex: 2;
+        text-align: center;
+        image {
+          width: 80%;
+        }
+      }
+      .pay-item-info {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10rpx;
+        .pay-item-info-top {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        .pay-item-info-bottom {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 20rpx;
+          view {
+            &:first-child {
+              color: var(--themeColor);
+            }
+          }
+        }
+      }
+    }
+  }
+  .pay-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 90rpx;
+    width: 100vw;
+    display: flex;
+    border-top: 1rpx solid #ccc;
+    .bottom-left {
+      flex: 5;
+      text-align: end;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10rpx;
+      .left-top {
+          text{
+              color: var(--themeColor);
+              font-weight: 500;
+          }
+      }
+      
+    }
+    .bottom-right {
+      background-color: var(--themeColor);
+      color: #fff;
+      font-weight: 500;
+      font-size: 30rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 2;
+    }
+  }
+}
